@@ -1,3 +1,5 @@
+let { people } = require("../data");
+
 const getPeople = (req, res) => {
   res.status(200).json({ success: true, data: people });
 };
@@ -7,7 +9,7 @@ const createPerson = (req, res) => {
   if (name) {
     return res.status(201).json({ success: true, person: name });
   }
-  res.status(400).json({ success: false, msg: 'please provide a name value' });
+  res.status(400).json({ success: false, msg: "please provide a name value" });
 };
 
 const createPersonPostman = (req, res) => {
@@ -18,7 +20,7 @@ const createPersonPostman = (req, res) => {
       data: [...people, { id: people.length + 1, name }],
     });
   }
-  res.status(400).json({ success: false, msg: 'please provide a name value' });
+  res.status(400).json({ success: false, msg: "please provide a name value" });
 };
 
 const editPerson = (req, res) => {
